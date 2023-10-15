@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const InformationPersonnelle=require("../users/infoPersoModel");
 
 const etudiantSchema = new mongoose.Schema({
   nomComplet: {
@@ -22,6 +23,19 @@ const etudiantSchema = new mongoose.Schema({
   dateInscription:{
     type:String,
   },
+});
+etudiantSchema.pre("remove",async function(next)
+{
+  try{
+  
+await  InformationPersonnelle.deleteMany({etudiant:this._id});
+next();
+
+  }catch(erreur)
+  {
+    next(erreur);
+
+  }
 });
 
 const Etudiant = mongoose.model('Etudiant', etudiantSchema);

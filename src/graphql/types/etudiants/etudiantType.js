@@ -7,13 +7,15 @@ type Etudiant {
     username:String!
     motDePasse:String!
     dateInscription:String!
+  
 
 }
 input EtudiantInput {
-    nomComplet:String!
-    email:String!
-    motDePasse:String!
+    nomComplet:String
+    email:String
+    motDePasse:String
 }
+
 
 
 

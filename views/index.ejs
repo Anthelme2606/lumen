@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire Enseignant</title>
+    <!-- Inclure le CDN de Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-4">
+    <h1 class="text-2xl font-semibold mb-4">Formulaire Enseignant</h1>
+    <form method="POST" action="/enseignant" enctype="multipart/form-data" class="bg-white p-4 rounded-lg shadow-md">
+        <div class="mb-4">
+            <label for="nom" class="block font-semibold">Nom:</label>
+            <input type="text" id="nom" name="nom" required class="w-full border p-2 rounded-md">
+        </div>
+
+        <div class="mb-4">
+            <label for="email" class="block font-semibold">Email:</label>
+            <input type="email" id="email" name="email" required class="w-full border p-2 rounded-md">
+        </div>
+
+        <div class="mb-4">
+            <label for="numeroTelephone" class="block font-semibold">Numéro de téléphone:</label>
+            <input type="text" id="numeroTelephone" name="numeroTelephone" class="w-full border p-2 rounded-md">
+        </div>
+
+        <div class="mb-4">
+            <label for="diplomesCertifications" class="block font-semibold">Diplômes et Certifications:</label>
+            <input type="file" id="diplomesCertifications" name="diplomesCertifications" multiple class="w-full border p-2 rounded-md">
+        </div>
+
+        <div class="mb-4">
+            <label for="curriculumVitae" class="block font-semibold">Curriculum Vitae:</label>
+            <input type="file" id="curriculumVitae" name="curriculumVitae" class="w-full border p-2 rounded-md">
+        </div>
+
+        <div class="mb-4">
+            <label for="lettreMotivation" class="block font-semibold">Lettre de Motivation:</label>
+            <input type="file" id="lettreMotivation" name="lettreMotivation" class="w-full border p-2 rounded-md">
+        </div>
+
+        <div class="mb-4">
+            <label for="casierJudiciaire" class="block font-semibold">Casier Judiciaire:</label>
+            <input type="file" id="casierJudiciaire" name="casierJudiciaire" class="w-full border p-2 rounded-md">
+        </div>
+
+        <!-- Ajoutez ici les autres champs du formulaire en fonction du schéma Mongoose -->
+
+        <div class="mt-4">
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md">Soumettre</button>
+        </div>
+    </form>
+</body>
+</html>

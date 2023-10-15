@@ -1,0 +1,14 @@
+@import './base.css';
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.menu-bar {
+    transition: transform 0.3s ease-in-out; /* Définis la durée et l'effet de transition souhaités */
+    transform: translateY(-100%); /* Par défaut, le menu est caché */
+  }
+  .dropdown-menu {
+    transform: translateX(-100%); /* Par défaut, le menu est caché à gauche */
+    transition: transform 0.3s ease-in-out; /* Ajoute une transition pour l'effet d'ouverture */
+  }
