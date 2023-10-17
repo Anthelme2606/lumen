@@ -4,6 +4,7 @@ type InformationPersonnelle {
   id: ID
  dateNaissance: String
   adresse: String
+  profile:Upload
   codePostal: String
   ville: String
   pays: String
@@ -23,6 +24,7 @@ enum sexeEnum {
 input InformationPersonnelleInput {
   etudiant: ID
   dateNaissance: String
+  profile:Upload
   adresse: String
   codePostal: String
   ville: String
@@ -35,6 +37,7 @@ input InformationPersonnelleInput {
   diplomePrecedent: String
   statutFamilial: String
 }
+scalar Upload
 
 
 

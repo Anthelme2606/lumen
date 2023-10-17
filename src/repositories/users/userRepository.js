@@ -63,6 +63,26 @@ class UserRepository {
       throw error;
     }
   }
+  static async getByIds(userIds) {
+    try{
+      return await UserModel.find({_id:{$in:userIds}});
+
+    }catch(error)
+    {
+      throw error;
+    }
+  }
+  static async getAll(){
+    try{
+      return await UserModel.find({});
+
+    }catch(err)
+    {
+      throw err;
+    }
+  }
+  
+ 
 }
 
 module.exports = UserRepository;

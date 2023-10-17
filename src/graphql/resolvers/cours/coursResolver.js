@@ -57,7 +57,7 @@ getAllCourses:async(parent)=>{
 
     },
     Course:{
-        user:async(parent)=>{
+        enseignant:async(parent)=>{
 return await CoursService.getUserById(parent.enseignant);
         }
     }

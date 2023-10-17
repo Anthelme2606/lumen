@@ -25,7 +25,14 @@ class CoursRepository {
       throw error;
     }
   }
-
+static  async getByIds(courseIds){
+  try{
+return await Cours.find({_id:{$in:courseIds}});
+  }catch(err)
+  {
+    throw err;
+  }
+}
   static async getAll() {
     try {
       return await Cours.find({});

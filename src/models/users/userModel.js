@@ -20,7 +20,11 @@
         type:String,
         enum:["ETUDIANT","ENSEIGNANT","SECRETAIRE","ADMIN"],
         default:"ETUDIANT",
-    }
+    },
+    matierePaid:[{
+        matiereId:{type:mongoose.Schema.Types.ObjectId,ref:"Matiere"},
+        dateAchat:{type:String},
+    },],
 
 
  });

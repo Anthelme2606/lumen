@@ -8,6 +8,8 @@ module.exports = gql`
     email: String
     userType: UserType
     infoPerso:InformationPersonnelle
+    ensChoice:[Matiere]
+    etuChoice:[Matiere]
   }
 
   enum UserType {
@@ -32,4 +34,6 @@ module.exports = gql`
     username:String!
     password:String!
   }
+  scalar Upload
+  
 `;

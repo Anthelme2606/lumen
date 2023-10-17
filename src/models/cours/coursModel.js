@@ -13,6 +13,12 @@ const coursSchema = new mongoose.Schema({
   fichier:{
     type:String,
   },
+  matiere: 
+    {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Cours',
+    },
+
   enseignant: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Enseignant', 

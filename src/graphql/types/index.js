@@ -10,13 +10,14 @@ const CourseType=require("./cours/courseType");
 
 module.exports = gql`
   type Query {
+    getUserById(userId:String):User
     getAll: [Etudiant!]
-    
+    getUsers:[User]
     getById(id: String!): Etudiant!
     getAllMatiere: [Matiere!]
     findEnseignantById(id: String!): Enseignant!
     getEnseignants: [Enseignant!]
-    currentUser:User
+    
 
 
     #course
@@ -24,6 +25,9 @@ module.exports = gql`
     getSingle(id:String):Course!
   }
   type Mutation {
+    upload(file:Upload):DemandeReponse
+    addMatiereToChoice(userId:String,matiereId:String):DemandeReponse
+    addEnsToMatiere(ensId:String,matiereId:String):DemandeReponse!
     signup(userData:UserInput):AuthPayload!
     login(loginData:loginInput):AuthPayload!
     creerCompte(data: EtudiantInput!): Etudiant!

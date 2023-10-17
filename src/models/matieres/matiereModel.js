@@ -16,9 +16,18 @@ const matiereSchema = new mongoose.Schema({
             ref: 'Enseignant',
         },
     ],
+    cours: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Cours',
+        },
+    ],
     niveauDifficulte: String,
 
-    nombreEtudiantsInscrits: Number,
+    nombreInscrits: {
+        type:Number,
+        default:0,
+    },
 
     dureeCours: String,
 
@@ -26,13 +35,17 @@ const matiereSchema = new mongoose.Schema({
 
     langueEnseignement: String,
 
-    objectifsApprentissage: [String],
+    objectifsApprentissage: String ,
 
     coutAchat: {
         type: Number,
         required: true,
         min: 0,
     },
+    userWhoChoose:[{
+        userId:{type:mongoose.Schema.Types.ObjectId,ref:"LumenUser"},
+        dateAchat:{type:String},
+    },],
 });
 
 const Matiere = mongoose.model('Matiere', matiereSchema);

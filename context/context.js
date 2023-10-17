@@ -25,8 +25,8 @@ const context = async ({ req, res }) => {
    
     return {};
   }
-  
-  if ( req.body.operationName === "SignUp" || req.body.operationName === "Login"
+  console.log(req.body.operationName);
+  if ( req.body.operationName === "Signup" || req.body.operationName === "Login"
   ) {
     return {};
   }
@@ -39,7 +39,7 @@ const context = async ({ req, res }) => {
  
 
   if (!user) {
-    throw new Error("User is not Authenticated");
+    throw new Error("User is not Authenticated...");
   }
 
  

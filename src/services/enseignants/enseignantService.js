@@ -1,7 +1,9 @@
 const EnseignantRepository=require("../../repositories/enseignants/enseignantRepository");
 const MatiereRepository=require("../../repositories/matieres/matiereRepository");
 
-const FileUtil=require("../../publics/functions/fileUtil");
+const Upload=require("../../publics/functions/upload");
+//console.log(Upload.readFile("file.png"));
+
 class EnseignantService {
 
     static async demandeEnseignant(data) {

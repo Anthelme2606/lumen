@@ -5,15 +5,16 @@ type Course {
   nom: String
   description: String
  fichier:String
- user:User
+ enseignant:User
  
 }
 
 input CourseInput {
   nom: String!
   description: String
-  fichier:String
-  enseignant: ID
+  fichier:Upload
+  matiereId:ID
+ # enseignant: ID
   
   
   
@@ -22,9 +23,10 @@ input CourseInput {
 input CourseUpdateInput {
   nom: String
   description: String
-  fichier:String
+  fichier:Upload
   
 }
+scalar Upload
 
 
 `;

@@ -4,27 +4,30 @@ type Matiere {
   id: ID!
   nom: String
   description: String
+  image:Upload
  # enseignants: [Enseignant]
   niveauDifficulte: String
-  nombreEtudiantsInscrits: Int
+  nombreInscrits: Int
   dureeCours: String
   prerequis: String
   langueEnseignement: String
-  objectifsApprentissage: [String]
+  objectifsApprentissage: String
   coutAchat: Float
- 
+  courses:[Course]
+  etudiants:[User]
+  
 }
 
 input MatiereInput {
   nom: String!
   description: String
-  enseignants: ID
+  image:Upload
   niveauDifficulte: String
-  nombreEtudiantsInscrits: Int
+ 
   dureeCours: String
   prerequis: String
   langueEnseignement: String
-  objectifsApprentissage: [String]
+  objectifsApprentissage: String
   coutAchat: Float!
   
   
@@ -33,6 +36,7 @@ input MatiereInput {
 input MatiereUpdateInput {
   nom: String
   description: String
+  image:Upload
   enseignants: ID
   niveauDifficulte: String
   nombreEtudiantsInscrits: Int
@@ -43,6 +47,9 @@ input MatiereUpdateInput {
   coutAchat: Float
   
 }
+scalar Upload 
+
+
 
 
 `;

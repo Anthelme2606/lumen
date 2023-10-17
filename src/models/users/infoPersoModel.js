@@ -10,6 +10,9 @@ const informationPersonnelleSchema = new mongoose.Schema({
   dateNaissance: {
     type: String,
   },
+  profile:{
+    type:String
+  },
   adresse: {
     type: String,
   },
