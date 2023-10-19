@@ -9,7 +9,7 @@ class MatiereService {
         try{
 
             if(data.image){
-                data.image=await Upload.readFile(data.image);
+                data.image=await Upload.uploadFile(data.image);
                 return MatiereRepository.create(data);
     
             }

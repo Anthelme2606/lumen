@@ -4,6 +4,7 @@ const matiereSchema = new mongoose.Schema({
     nom: {
         type: String,
         required: true,
+        unique:true,
     },
     image: {
         type: String,

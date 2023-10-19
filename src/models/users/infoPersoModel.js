@@ -2,6 +2,9 @@ const mongoose = require('mongoose');
 
 // Schéma des informations personnelles de l'étudiant
 const informationPersonnelleSchema = new mongoose.Schema({
+  profile:{
+    type:String,
+  },
  user:{
     type:mongoose.Schema.Types.ObjectId,
     ref:'LumenUser', 

@@ -1,10 +1,12 @@
-const EnseignantModel = require("../../models/enseignants/enseignantModel");
-class EnseignantRepository {
+const DemandeEnsModel = require("../../models/enseignants/demandeEnsModel");
+class DemandeEnsRepository {
 
-
+  
     static async demandeEnseignant(data) {
         try {
-            const newEnseignant = new EnseignantModel(data);
+
+            const newEnseignant = new DemandeEnsModel(data);
+            
             const ens=await newEnseignant.save();
             return  ens;
         }
@@ -18,7 +20,7 @@ class EnseignantRepository {
  static async accepterDemandeEnseignement(demandeId) {
     try {
       // Recherchez la demande d'enseignement par son ID
-      const demande = await EnseignantModel.findById(demandeId);
+      const demande = await DemandeEnsModel.findById(demandeId);
 
       if (!demande) {
         // La demande n'a pas été trouvée
@@ -40,7 +42,7 @@ class EnseignantRepository {
   static async refuserDemandeEnseignement(demandeId) {
     try {
      
-      const demande = await EnseignantModel.findById(demandeId);
+      const demande = await DemandeEnsModel.findById(demandeId);
 
       if (!demande) {
       
@@ -61,10 +63,10 @@ class EnseignantRepository {
   }
   static async findEnseignantById(enseignantId)
   {
-   //console.log(EnseignantModel);
+   //console.log(DemandeEnsModel);
     try {
 
-        const ens = await EnseignantModel.findById(enseignantId);
+        const ens = await DemandeEnsModel.findById(enseignantId);
        
         return ens;
     } catch (erreur) {
@@ -74,7 +76,7 @@ class EnseignantRepository {
 static async getEnseignants()
 {
     try{
-        const enseignants=await EnseignantModel.find({});
+        const enseignants=await DemandeEnsModel.find({});
     return enseignants;
     }catch(error)
     {
@@ -84,4 +86,4 @@ static async getEnseignants()
    
 
 }
-module.exports=EnseignantRepository;
+module.exports=DemandeEnsRepository;

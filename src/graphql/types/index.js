@@ -4,7 +4,7 @@ const EtudiantType = require("./etudiants/etudiantType");
 
 const InfoPersoType = require("./users/infoPersoType");
 const MatiereType = require("./matieres/matiereType");
-const EnseignantType = require("./enseignants/enseignantType");
+const DemandeEnsType = require("./enseignants/demandeEnsType");
 const UserType=require("./users/userType");
 const CourseType=require("./cours/courseType");
 
@@ -15,8 +15,8 @@ module.exports = gql`
     getUsers:[User]
     getById(id: String!): Etudiant!
     getAllMatiere: [Matiere!]
-    findEnseignantById(id: String!): Enseignant!
-    getEnseignants: [Enseignant!]
+    findEnseignantById(id: String!): Demande!
+    getEnseignants: [Demande!]
     
 
 
@@ -44,7 +44,7 @@ module.exports = gql`
 
     updateMatiere(id: String!, data: MatiereUpdateInput): Matiere!
 
-    demandeEnseignant(data: CreerEnseignantInput): Enseignant!
+    demandeEnseignant(data: demandeInput): Demande!
 
     accepterDemandeEnseignement(enseignantId: String): DemandeReponse!
 
@@ -61,7 +61,7 @@ module.exports = gql`
   ${EtudiantType}
   ${InfoPersoType}
   ${MatiereType}
-  ${EnseignantType}
+  ${DemandeEnsType}
   ${UserType}
   ${CourseType}
 `;

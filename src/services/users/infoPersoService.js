@@ -4,7 +4,7 @@ class InformationPersonnelleService {
   static async saveInfo(data) {
     try {
       if (data.profile) {
-        data.profile = await Upload.readFile(data.profile);
+        data.profile = await Upload.uploadFile(data.profile);
         return await InformationPersonnelleRepository.saveInfo(data);
       }
     } catch (err) {
