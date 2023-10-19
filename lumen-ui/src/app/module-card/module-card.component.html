@@ -1,0 +1,12 @@
+<mat-card class="module-card" [style.width.px]="width">
+  <img mat-card-image class="module-image" [src]="module.image" alt="Description image">
+  <mat-card-content>
+     <h2>{{ module.title }}</h2>
+     <p>{{ module.description }}</p>
+     <mat-icon fontIcon="star">Rating</mat-icon>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>Like</button>
+    <button mat-button>Share</button>
+  </mat-card-actions>
+</mat-card>

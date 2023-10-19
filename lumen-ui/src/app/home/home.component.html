@@ -1,1 +1,10 @@
-Home component
+<div *ngIf="modules.length > 0; else default">
+     <mat-grid-list [cols]="breakpoint" rowHeight="200px" (window:size)="handleSize($event)">
+          <mat-grid-tile *ngFor="let module of modules">
+               <app-module-card [width]="200" [module]="module"></app-module-card>
+          </mat-grid-tile>
+     </mat-grid-list>
+</div>
+<ng-template #default>
+     No module available
+</ng-template>

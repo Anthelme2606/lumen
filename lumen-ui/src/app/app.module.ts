@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { ModuleCardComponent } from './module-card/module-card.component';
 
 import { MaterialModule } from './material.module';
 
@@ -13,6 +14,7 @@ import { MaterialModule } from './material.module';
   declarations: [
     AppComponent,
     HomeComponent,
+    ModuleCardComponent,
     NavBarComponent
   ],
   imports: [
